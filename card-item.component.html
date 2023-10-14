@@ -1,0 +1,13 @@
+<li
+class="list-group-item d-flex justify-content-between align-items-start"
+>
+<div class="ms-2 me-auto">
+  <div class="fw-bold">{{item?.title}}</div>
+  Rs.{{item?.price?.value}}
+</div>
+<button type="button" class="btn" (click)="sub(item)" style="display: flex; padding-right: 5%;"><i class="fa fa-minus"></i></button>
+<span>{{item?.price?.qut}}</span>
+
+<button type="button" class="btn" (click)="add(item)" style="display: flex; padding-right: 15%;"><i class="fa fa-plus"></i></button>
+<button class="badge bg-primary rounded-pill" (click)="removeProduct(item?.ISBN!)">X</button>
+</li>
