@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <h1 style="display: flex; background-color: rgb(247, 207, 155); font-style: italic;" class="fas fa-solid fa-box-open">Books</h1>
+      <div class="row">
+        <div *ngFor="let product of products" class="col-lg-4">
+          <app-card [product]="product" (addProduct)="insertProduct($event)"></app-card>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <h1 style="display: flex; background-color: rgb(247, 207, 155);font-style: italic;" class="fas fa-shopping-cart">Cart</h1>
+      <ol class="list-group list-group-numbered">
+        <app-card-item *ngFor="let item of cartItems" [item]="item" (removeFromCart)="removeItem($event)" (cartTotal)="updateTotal($event)">
+        </app-card-item>
+      </ol>
+      <h1 style="display: flex;background-color:rgb(244, 241, 240); color: rgb(14, 13, 13); font-style: italic; padding-top: 5%;">Total : EUR.{{total}}</h1>
+    </div>
+  </div>
+</div>
