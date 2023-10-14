@@ -1,0 +1,12 @@
+<div class="card" style="width: 14rem">
+    <img [src]="product?.image" class="card-img-top img-fluid card-img-top img-thumbnail rounded mx-auto d-block" alt="No image" />
+    <div class="card-body">
+      <h5 class="card-title">{{ product?.title | slice : 0 : 10 }}</h5>
+      <h3 class="card-text">{{ product?.author | slice : 0 : 35 }}</h3>
+      <p class="card-text">{{ product?.summary | slice : 0 : 40 }}</p>
+      <h4 class="card-text">EUR.{{ product?.price?.value}}</h4>
+      <button (click)="addToCart(product!)" class="btn btn-primary">
+        Add to Cart
+      </button>
+    </div>
+  </div>
